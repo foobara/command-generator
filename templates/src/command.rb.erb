@@ -12,20 +12,25 @@ class <%= module_path.last %> < Foobara::Command
   # end
 
   inputs do
-    # some_input :string, :required, default: "foo"
+    input :foo, type: :string, default: "bar"
   end
+
+  result :string
 
   # depends_on SomeOtherCommand
 
   # possible_error SomeError
-
   def execute
-    # do_something
+    do_something
   end
 
   # def validate
   #   add_runtime_error SomeError.new(message: "kaboom", context: {foo: :bar})
   # end
+
+  def do_something
+    foo
+  end
 
 <% module_path.size.times do %>
 end
