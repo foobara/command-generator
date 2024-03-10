@@ -8,7 +8,8 @@ module Foobara
               case manifest
               when CommandConfig
                 [
-                  Generators::CommandGenerator
+                  Generators::CommandGenerator,
+                  Generators::CommandSpecGenerator
                 ]
               else
                 # :nocov:
@@ -34,17 +35,6 @@ module Foobara
 
           def templates_dir
             "#{__dir__}/../templates"
-          end
-
-          # TODO: promote this up to base project
-          def ==(other)
-            # :nocov:
-            self.class == other.class && command_config == other.command_config
-            # :nocov:
-          end
-
-          def hash
-            command_config.hash
           end
         end
       end
