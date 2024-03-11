@@ -26,8 +26,7 @@ RSpec.describe Foobara::Generators::CommandGenerator::GenerateCommand do
         command_name: "SomeCommand",
         description: "whatever",
         organization_name: "SomeOrg",
-        domain_name: "SomeDomain",
-        full_module_name: "SomeOrg::SomeDomain::SomeCommand"
+        domain_name: "SomeDomain"
       }
     end
 
