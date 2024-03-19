@@ -11,6 +11,8 @@ class <%= module_path.last %> < Foobara::Command
   #   end
   # end
 
+  # possible_error SomeError
+
   inputs do
     foo :string, default: "bar"
   end
@@ -19,7 +21,6 @@ class <%= module_path.last %> < Foobara::Command
 
   # depends_on SomeOtherCommand
 
-  # possible_error SomeError
   def execute
     do_something
   end
