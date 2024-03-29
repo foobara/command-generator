@@ -35,8 +35,7 @@ module Foobara
         end
 
         def generate_file_contents
-          # TODO: just pass this in as the inputs instead of the command??
-          self.paths_to_source_code = run_subcommand!(GenerateCommand, command_config.attributes)
+          self.paths_to_source_code = run_subcommand!(GenerateCommand, command_config.original_attributes)
         end
 
         def run_post_generation_tasks

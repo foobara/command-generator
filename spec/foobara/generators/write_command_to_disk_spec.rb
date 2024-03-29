@@ -11,11 +11,11 @@ RSpec.describe Foobara::Generators::CommandGenerator::WriteCommandToDisk do
   end
   let(:command_config) do
     {
-      command_name:,
+      name:,
       description: "whatever"
     }
   end
-  let(:command_name) { "SomeOrg::SomeDomain::SomeCommand" }
+  let(:name) { "SomeOrg::SomeDomain::SomeCommand" }
   let(:output_directory) { "#{__dir__}/../../../tmp/command_test_suite_output" }
 
   before do

@@ -1,9 +1,9 @@
 RSpec.describe Foobara::Generators::CommandGenerator::GenerateCommand do
-  let(:command_name) { "SomeOrg::SomeDomain::SomeCommand" }
+  let(:name) { "SomeOrg::SomeDomain::SomeCommand" }
 
   let(:inputs) do
     {
-      command_name:,
+      name:,
       description: "whatever"
     }
   end
@@ -18,12 +18,15 @@ RSpec.describe Foobara::Generators::CommandGenerator::GenerateCommand do
     expect(command_file).to include("module SomeOrg")
     expect(command_file).to include("module SomeDomain")
     expect(command_file).to include("class SomeCommand")
+
+    expect(command.command_config.command_name).to eq("SomeCommand")
+    expect(command.command_config.full_module_path).to eq(%w[SomeOrg SomeDomain SomeCommand])
   end
 
   context "with all options" do
     let(:inputs) do
       {
-        command_name: "SomeCommand",
+        name: "SomeCommand",
         description: "whatever",
         organization_name: "SomeOrg",
         domain_name: "SomeDomain"
