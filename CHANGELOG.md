@@ -1,3 +1,7 @@
+## [0.0.2]
+
+- Include templates in gem
+
 ## [0.0.1]
 
 - Add Apache-2.0 license
