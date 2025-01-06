@@ -1,3 +1,7 @@
+## [0.0.3]
+
+- Bump Ruby to 3.4.1
+
 ## [0.0.2]
 
 - Include templates in gem
