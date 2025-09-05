@@ -14,7 +14,11 @@ module Foobara
 
             file = "#{file}_spec.rb"
 
-            ["spec", *path, file]
+            if top_level
+              ["spec", file]
+            else
+              ["spec", *path, file]
+            end
           end
         end
       end

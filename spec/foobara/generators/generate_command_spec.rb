@@ -29,17 +29,20 @@ RSpec.describe Foobara::Generators::CommandGenerator::GenerateCommand do
         name: "SomeCommand",
         description: "whatever",
         organization_name: "SomeOrg",
-        domain_name: "SomeDomain"
+        domain_name: "SomeDomain",
+        top_level: true
       }
     end
 
     it "generates a command using the given options" do
       expect(outcome).to be_success
 
-      command_file = result["src/some_org/some_domain/some_command.rb"]
+      command_file = result["src/some_command.rb"]
       expect(command_file).to include("module SomeOrg")
       expect(command_file).to include("module SomeDomain")
       expect(command_file).to include("class SomeCommand")
+
+      expect(result.key?("spec/some_command_spec.rb")).to be true
     end
   end
 end

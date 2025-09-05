@@ -28,7 +28,11 @@ module Foobara
 
             file = "#{file}.rb"
 
-            ["src", *path, file]
+            if top_level
+              ["src", file]
+            else
+              ["src", *path, file]
+            end
           end
 
           alias command_config relevant_manifest

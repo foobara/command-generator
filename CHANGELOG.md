@@ -1,3 +1,7 @@
+## [0.1.0] - 2025-09-05
+
+- Add top_level config option to skip nesting files
+
 ## [0.0.3] - 2025-01-06
 
 - Bump Ruby to 3.4.1

@@ -11,6 +11,7 @@ module Foobara
           domain_name :string, :allow_nil
           no_organization :boolean, default: false
           no_domain :boolean, default: false
+          top_level :boolean, default: false, description: "Puts A::B::C in src/c.rb instead of src/a/b/c.rb"
         end
 
         attr_accessor :command_path, :full_module_name, :original_attributes
