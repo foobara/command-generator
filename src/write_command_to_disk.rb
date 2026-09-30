@@ -45,14 +45,14 @@ module Foobara
         end
 
         def rubocop_autocorrect
-          # :nocov:
+          # simplecov:disable
           Open3.popen3("bundle exec rubocop --no-server -A") do |_stdin, _stdout, stderr, wait_thr|
             exit_status = wait_thr.value
             unless exit_status.success?
               raise "could not rubocop --no-server -A. #{stderr.read}"
             end
           end
-          # :nocov:
+          # simplecov:enable
         end
       end
     end

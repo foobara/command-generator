@@ -1,5 +1,3 @@
-require "pathname"
-
 require_relative "command_config"
 
 module Foobara
@@ -31,9 +29,9 @@ module Foobara
         # TODO: delegate this to base_generator
         def templates_dir
           # TODO: implement this?
-          # :nocov:
+          # simplecov:disable
           "#{__dir__}/../templates"
-          # :nocov:
+          # simplecov:enable
         end
 
         def add_initial_elements_to_generate
