@@ -3,6 +3,10 @@ module <%= part %>
 <% end %>
 
 class <%= module_path.last %> < Foobara::Command
+  <% if description %>
+    description <%= description.inspect %>
+  <% end %>
+
   # class SomeError < RuntimeError
   #   class << self
   #     def context_type_declaration
